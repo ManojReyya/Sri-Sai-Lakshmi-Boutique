@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;1,400&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#1b1d0e",
+                    "primary-fixed-dim": "#c8c8b0",
+                    "on-primary-container": "#6f705c",
+                    "surface-variant": "#e4e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e1",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-tertiary-container": "#876b00",
+                    "on-secondary-fixed": "#28180b",
+                    "on-surface": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffe088",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "primary-fixed": "#e4e4cc",
+                    "tertiary-container": "#fff2d7",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#785f4f",
+                    "on-tertiary-fixed": "#241a00",
+                    "primary-container": "#f5f5dc",
+                    "secondary": "#715a49",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#fddcc7",
+                    "primary": "#5e604d",
+                    "surface": "#fbf9f8",
+                    "inverse-primary": "#c8c8b0",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#fddcc7",
+                    "secondary-fixed-dim": "#dfc1ac",
+                    "background": "#fbf9f8",
+                    "surface-tint": "#5e604d",
+                    "surface-container": "#f0eded",
+                    "outline-variant": "#c8c7bc",
+                    "on-surface-variant": "#47473f",
+                    "tertiary": "#735c00",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fbf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-fixed-variant": "#474836",
+                    "surface-container-high": "#eae8e7",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#584233",
+                    "outline": "#78776e",
+                    "error": "#ba1a1a",
+                    "on-background": "#1b1c1c",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "16px",
+                    "stack-lg": "80px",
+                    "stack-md": "32px",
+                    "container-max": "1440px",
+                    "margin-edge": "64px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        font-size: 20px;
+      }
+      .quick-view-btn {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .product-card:hover .quick-view-btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .product-card img {
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .product-card:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 border-b border-stone-200/50 bg-[#F5F5DC] dark:bg-stone-900/95 backdrop-blur-md">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-4 md:px-12 h-20">
+<a class="font-serif italic text-xl md:text-2xl tracking-tighter text-stone-900 dark:text-amber-200" href="index.html">Sai Lakshmi Boutique</a>
+<div class="hidden md:flex items-center gap-8 font-serif text-lg tracking-wide">
+<a class="text-amber-600 border-b border-amber-600 pb-1" href="collection.html">Collection</a>
+<a class="text-stone-600 hover:text-stone-900 transition-colors duration-500" href="about.html">About</a>
+<a class="text-stone-600 hover:text-stone-900 transition-colors duration-500" href="contact.html">Contact</a>
+</div>
+<button onclick="document.getElementById('mobile-menu-col').classList.toggle('hidden')" class="md:hidden p-2 text-stone-700" aria-label="Toggle menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<div id="mobile-menu-col" class="hidden md:hidden bg-[#F5F5DC] border-t border-stone-200/50 px-4 py-4 flex flex-col gap-4 font-serif text-lg">
+<a class="text-amber-600" href="collection.html">Collection</a>
+<a class="text-stone-600 hover:text-stone-900" href="about.html">About</a>
+<a class="text-stone-600 hover:text-stone-900" href="contact.html">Contact</a>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-12 py-8">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 shrink-0">
+<details class="md:open" open>
+<summary class="md:hidden flex justify-between items-center cursor-pointer font-headline-md text-lg border-b border-outline-variant pb-2 mb-4">
+Filter <span class="material-symbols-outlined">expand_more</span>
+</summary>
+<div class="space-y-8">
+<h3 class="hidden md:block font-headline-md text-headline-md mb-6 border-b border-outline-variant pb-2">Filter</h3>
+<!-- Category -->
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-4">Category</span>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Saree</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Lehengas</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Suits</span>
+</label>
+</div>
+</div>
+<!-- Fabric -->
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-4">Fabric</span>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Silk</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Chiffon</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="form-checkbox border-outline text-primary rounded-none focus:ring-0" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface group-hover:text-tertiary transition-colors">Linen</span>
+</label>
+</div>
+</div>
+<!-- Color -->
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-4">Color</span>
+<div class="flex flex-wrap gap-3">
+<button class="w-6 h-6 rounded-full bg-stone-900 border border-outline-variant"></button>
+<button class="w-6 h-6 rounded-full bg-amber-200 border border-outline-variant"></button>
+<button class="w-6 h-6 rounded-full bg-red-800 border border-outline-variant"></button>
+<button class="w-6 h-6 rounded-full bg-emerald-900 border border-outline-variant"></button>
+<button class="w-6 h-6 rounded-full bg-primary-container border border-outline-variant"></button>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-4">Price</span>
+<input class="w-full accent-primary h-1 bg-surface-variant appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-2 font-label-sm text-on-surface-variant">
+<span>₹5,000</span>
+<span>₹100,000+</span>
+</div>
+</div>
+</details>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-8">
+<div>
+<h1 class="font-headline-lg text-2xl md:text-headline-lg">Silk Sarees</h1>
+<p class="font-body-md text-on-surface-variant mt-2">Discover our curated collection of heritage weaves.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sort by</span>
+<select class="bg-transparent border-b border-outline py-1 pr-8 focus:ring-0 focus:border-tertiary font-body-md appearance-none cursor-pointer">
+<option>Popularity</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product 1 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="close-up of an elegant hand-woven emerald green silk saree with intricate gold zari border detailing and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEfElxVjSRBAbOO4kFRTXjPlSEOe3vQ-l9FE9TVWfyZnUABM3xQy3nTfGPCBhBJRs-wJPf4WCRb02eCWRFq4wO56qhpgDAIn0AGFYMqkKw4hPflXTeBZ-Cy9W38HEt3NrfnissQ2jCQuxNxM_gucwBIYi3pC5Drl4KuxmvdBsd4d3GEfPqL2SfI6VJLhTFT9no0U35UyM70hpr-5UEww4l5qlfqX1BZJYqJyp0iXIDTcz_wuUxVcmqzLiAExj_AlQ71mZ0CfcGQSkS"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Emerald Heritage Kanchipuram</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹48,500</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="luxurious deep crimson banarasi saree with heavy gold floral patterns draped elegantly on a boutique stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvd-yYIzNlaTnsy8g_DASXCaZ1aVNX7SCm8P5v8zQoJEWkyTAodKU4Wq4fAO-ASw6a8gGU1tUP480CClJ2vyqJpBFq_5q7uaSy7gIujIdPAxNbu4e-O3JhLug0DFM9v-TAOIjIcHlWuZNzOIsicMvpw4p14gyKui-DldpnmaRwN2z4VlmojheJ9a-eIkvCROY0rE4JZDcZYRoLi9uSljyAXQcZrXsl4eMDdEVcHzniHQYaTqwJFqyn2C9on3p9H0bhJuPO0POGjPT"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Royal Banarasi Crimson</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹72,000</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="modern minimalist ivory designer saree with subtle sequin work and sheer fabric captured in warm afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvi1R1SooMFknhdeOGEfFu25RL2Kfnl36psRYPTqsBHiEnyANcdd6KKA1rzMkLE5S_SdZR9iXJH60C_s5C_5sLtYFGR1oO6mfaHzfNB41_xao3NiCLsHs5-F4QoPfx9WzjxVb6bWAWo4HU39_F_38yCIiSbJqxsQPX8pzHF8fq6F4iLqH9fAH_eKmQJonB8BTXYSQaX7qclvt0niSZYfWUFEGcH1RCZwRuw0yK1chTkTcj0yd_E_SWi9oc0zYwMj20FqdBPKJ-PO9t"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Ivory Whisper Organza</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹32,900</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="traditional hand-woven indigo blue silk saree with geometric silver patterns in a bright editorial studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJZ1TInAf1Oyu5uZnzLr80m6A2JNg7o45xJq6iOVVIvlMVzBeMGPbh1EjxiOE4o6jpvex3M3npzxUAt8cxLzqfEHcaQeIZkHoyW3jhLcOHgqJ_FUv90zPtOCPWX_BJ1Jh5SrZmLfOFaUaZ_uw5hwIZkzJiU6SlAEa7coEUOMK-eZHGp6CwyqhIaLyCl7FvJx5XFIxjsQq0mMqN3wTsAN3j57hlEOWJGdKt_aLV0szu9B2qPH7igGVtlyKaBK5O0N8KH__QZeR1ik8S"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Indigo Midnight Silk</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹54,000</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="delicate peach shaded chiffon saree with gold foil prints draped softly showing texture and drape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI4WhvOHpYansRjoPq75a9_GkpwUInZM5zXYz7t23OgpYj2g2hFMtQR_Okf-B87qubDSpkzoa2LaRNjcF1_C03lEVgN4DKHKity2_jJ2PWtTN3m8MENcP-nZ-J-CO4fJgePMjQVhV3LWp-f-oALwyHkIeB-Jaj4XNEHqG7go3NTDaUTUkm6C3tptAyCeCWapvzTH32J7dRyI2JVAcLM-o6_Dk6CNOiVPWoIOWY71f-DXT4QY0DorMOdhX4vdlKInfQCQuV2ovaj2oJ"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Peach Petal Chiffon</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹18,500</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container mb-6">
+<img class="w-full h-full object-cover" data-alt="rich mustard yellow silk saree with contrast magenta border and ethnic motifs in a traditional wooden interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfcj2xE2AkG2ojxx1y26WvgYcP_tIP-siuzj4wgdCDS--AE7i993qKWKMuO9NgAPiUcIuSh4CCRs6SaIgM4aXx02PN5WsexQmPm2WLGx---iQ0dK-XU8jW6LxpCVAcojb1YYUPHXU8w99ewIgdgm62O3XqgCXi6Ytsm3aAVRZEoJlAGo3EJTdtB1Q5VoVFXDe_kaZl-MwSoXiFNxsxGTRoD_tLJM-__0DZZe1Dh6GYfrngmrIVeUzOrfy3dYUzkx3tEiQPnjtGECq3"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center p-6">
+<button class="quick-view-btn px-8 py-3 bg-stone-900 text-stone-50 font-label-sm uppercase tracking-widest hover:bg-amber-600 transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-lg mb-1">Mustard &amp; Madder Silk</h2>
+<p class="font-body-md text-on-surface-variant tracking-wider">₹42,000</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<nav class="flex items-center justify-center gap-8 mt-24">
+<button class="p-2 text-stone-400 hover:text-stone-900 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex gap-6 items-center">
+<a class="font-label-sm text-amber-700 border-b border-amber-700 pb-1" href="collection.html">01</a>
+<a class="font-label-sm text-stone-400 hover:text-stone-900 transition-colors" href="product.html">02</a>
+<a class="font-label-sm text-stone-400 hover:text-stone-900 transition-colors" href="about.html">03</a>
+<a class="font-label-sm text-stone-400 hover:text-stone-900 transition-colors" href="contact.html">04</a>
+</div>
+<button class="p-2 text-stone-400 hover:text-stone-900 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/50 bg-[#F5F5DC] dark:bg-stone-900/95">
+  <div class="flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto px-4 md:px-12 py-10 gap-8">
+    <div>
+      <a class="font-serif italic text-2xl tracking-tighter text-stone-900 dark:text-amber-200 mb-4 block" href="index.html">Sai Lakshmi Boutique</a>
+      <p class="font-serif text-sm opacity-70 max-w-xs mb-4">A legacy of luxury and timeless elegance in ethnic fashion.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a class="text-stone-700 hover:text-amber-600 flex items-center gap-2 text-sm" href="mailto:info@sailakshmiboutique.com">
+          <span class="material-symbols-outlined text-base">mail</span>info@sailakshmiboutique.com
+        </a>
+        <a class="text-stone-700 hover:text-amber-600 flex items-center gap-2 text-sm" href="https://wa.me/919876543210" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined text-base">chat</span>WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-row flex-wrap gap-6 font-serif text-sm tracking-widest uppercase">
+      <a class="text-stone-600 hover:text-amber-600 transition-colors" href="collection.html">Collection</a>
+      <a class="text-stone-600 hover:text-amber-600 transition-colors" href="about.html">About</a>
+      <a class="text-stone-600 hover:text-amber-600 transition-colors" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="text-stone-700 hover:text-amber-600" href="https://instagram.com/SaiLakshmiBoutique" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined">public</span><span class="sr-only">Instagram</span>
+      </a>
+      <a class="text-stone-700 hover:text-amber-600" href="https://facebook.com/SaiLakshmiBoutique" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined">share</span><span class="sr-only">Facebook</span>
+      </a>
+      <a class="text-stone-700 hover:text-amber-600" href="mailto:info@sailakshmiboutique.com">
+        <span class="material-symbols-outlined">mail</span><span class="sr-only">Email</span>
+      </a>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 md:px-12 py-6 border-t border-stone-200/50 text-center">
+    <p class="font-serif text-xs tracking-widest uppercase opacity-60">© 2026 Sai Lakshmi Boutique. All Rights Reserved.</p>
+  </div>
+</footer>
+</body></html>

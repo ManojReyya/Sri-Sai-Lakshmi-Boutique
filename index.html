@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sai Lakshmi Boutique | Aura of Elegance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1b1d0e",
+                        "primary-fixed-dim": "#c8c8b0",
+                        "on-primary-container": "#6f705c",
+                        "surface-variant": "#e4e2e1",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2e1",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary-container": "#876b00",
+                        "on-secondary-fixed": "#28180b",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffe088",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary-fixed": "#e4e4cc",
+                        "tertiary-container": "#fff2d7",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#785f4f",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-container": "#f5f5dc",
+                        "secondary": "#715a49",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#fddcc7",
+                        "primary": "#5e604d",
+                        "surface": "#fbf9f8",
+                        "inverse-primary": "#c8c8b0",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#fddcc7",
+                        "secondary-fixed-dim": "#dfc1ac",
+                        "background": "#fbf9f8",
+                        "surface-tint": "#5e604d",
+                        "surface-container": "#f0eded",
+                        "outline-variant": "#c8c7bc",
+                        "on-surface-variant": "#47473f",
+                        "tertiary": "#735c00",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary-fixed-variant": "#474836",
+                        "surface-container-high": "#eae8e7",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#584233",
+                        "outline": "#78776e",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1c",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-lg": "80px",
+                        "stack-md": "32px",
+                        "container-max": "1440px",
+                        "margin-edge": "64px",
+                        "unit": "8px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-secondary-container">
+    <!-- TopNavBar -->
+    <nav class="sticky top-0 w-full z-50 border-b border-stone-200/50 bg-[#F5F5DC] dark:bg-stone-900/95 backdrop-blur-md">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-4 md:px-12 h-20">
+            <a class="font-serif italic text-xl md:text-2xl tracking-tighter text-stone-900 dark:text-amber-200" href="index.html">Sai Lakshmi Boutique</a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-serif text-lg tracking-wide">
+                <a class="text-stone-600 hover:text-stone-900 transition-colors duration-500" href="collection.html">Collection</a>
+                <a class="text-stone-600 hover:text-stone-900 transition-colors duration-500" href="about.html">About</a>
+                <a class="text-amber-600 border-b border-amber-600 pb-1" href="contact.html">Contact</a>
+            </div>
+            <!-- Mobile Hamburger -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 text-stone-700" aria-label="Toggle menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#F5F5DC] border-t border-stone-200/50 px-4 py-4 flex flex-col gap-4 font-serif text-lg">
+            <a class="text-stone-600 hover:text-stone-900" href="collection.html">Collection</a>
+            <a class="text-stone-600 hover:text-stone-900" href="about.html">About</a>
+            <a class="text-amber-600" href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative h-[84vh] md:h-[78vh] w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img alt="Handcrafted saree" class="w-full h-full object-cover"
+                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1600&h=900&fit=crop" />
+                <div class="absolute inset-0 bg-gradient-to-b from-stone-900/30 via-transparent to-stone-900/20"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 h-full flex items-center">
+                <div class="w-full md:w-1/2 text-stone-50">
+                    <p class="font-label-sm uppercase tracking-widest text-amber-200 mb-4">Sri Sai Lakshmi Boutique</p>
+                    <h1 class="font-display-xl text-4xl md:text-6xl leading-tight mb-6">Handcrafted Sarees & Bespoke
+                        Designs</h1>
+                    <p class="max-w-lg font-body-lg text-stone-100 mb-8">Exclusive, artisan-made sarees and saree
+                        jackets blending traditional Indian craft with contemporary silhouettes. Custom stitching and
+                        personalized consultations available.</p>
+                    <div class="flex gap-4">
+                        <a class="inline-block bg-stone-900 text-stone-50 px-6 py-3 rounded shadow-md font-label-sm uppercase tracking-widest"
+                            href="collection.html">Shop Collection</a>
+                        <a class="inline-block border border-stone-50 text-stone-50 px-6 py-3 rounded font-label-sm uppercase tracking-widest"
+                            href="mailto:info@sailakshmiboutique.com">Book Consultation</a>
+                    </div>
+                    <p class="mt-6 text-sm opacity-80">Bespoke designs · Limited editions · Handpicked fabrics</p>
+                </div>
+                <div class="hidden md:block md:w-1/2 pl-12">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img class="w-full h-[420px] object-cover"
+                            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&h=520&fit=crop"
+                            alt="Detail of silk saree" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curated Highlights -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col gap-4">
+                    <img class="w-full h-56 object-cover rounded-lg shadow-md"
+                        src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&h=520&fit=crop"
+                        alt="Festive Wear" />
+                    <h3 class="font-headline-md text-xl">Festive & Bridal Sarees</h3>
+                    <p class="text-sm text-stone-700">Handwoven silks and heirloom embroideries for celebrations and
+                        special moments.</p>
+                    <a href="collection.html"
+                        class="mt-4 inline-block text-amber-600 font-label-sm uppercase">Explore</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <img class="w-full h-56 object-cover rounded-lg shadow-md"
+                        src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?w=800&h=520&fit=crop&auto=compress"
+                        alt="New Arrivals" />
+                    <h3 class="font-headline-md text-xl">Designer Jackets</h3>
+                    <p class="text-sm text-stone-700">Contemporary saree jackets crafted to complement and elevate your
+                        look.</p>
+                    <a href="collection.html"
+                        class="mt-4 inline-block text-amber-600 font-label-sm uppercase">Explore</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <img class="w-full h-56 object-cover rounded-lg shadow-md"
+                        src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=800&h=520&fit=crop"
+                        alt="Saree Jackets" />
+                    <h3 class="font-headline-md text-xl">Saree Jackets</h3>
+                    <p class="text-sm text-stone-700">Exclusive drops — small batches, premium fabrics, and artisanal
+                        finishes.</p>
+                    <a href="collection.html"
+                        class="mt-4 inline-block text-amber-600 font-label-sm uppercase">Explore</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bespoke Process -->
+        <section class="bg-surface-container-low py-12">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center mb-8">
+                    <span class="font-label-sm uppercase tracking-widest text-tertiary">Bespoke</span>
+                    <h2 class="font-headline-lg mt-2">Custom Design & Stitching</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-stone-700">Work with our designers to choose fabrics,
+                        tailoring, and custom embellishments — made just for you.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-[#fff2d7] flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined">call</span>
+                        </div>
+                        <h4 class="font-label-sm uppercase tracking-widest">Consult</h4>
+                        <p class="text-sm mt-2 text-stone-700">Share your vision and measurements with our stylist.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-[#fff2d7] flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined">design_services</span>
+                        </div>
+                        <h4 class="font-label-sm uppercase tracking-widest">Design</h4>
+                        <p class="text-sm mt-2 text-stone-700">Receive tailored designs and fabric samples.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-[#fff2d7] flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined">handyman</span>
+                        </div>
+                        <h4 class="font-label-sm uppercase tracking-widest">Stitch</h4>
+                        <p class="text-sm mt-2 text-stone-700">Artisan stitching with attention to detail and fit.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-[#fff2d7] flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined">local_shipping</span>
+                        </div>
+                        <h4 class="font-label-sm uppercase tracking-widest">Deliver</h4>
+                        <p class="text-sm mt-2 text-stone-700">Secure delivery and follow-up fitting if required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="font-label-sm uppercase tracking-widest text-tertiary">Curated Selection</span>
+                    <h2 class="font-headline-lg mt-2">Best Sellers</h2>
+                </div>
+                <a href="collection.html" class="font-label-sm uppercase border-b pb-1">View All</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-md">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=640&h=800&fit=crop"
+                            alt="Amber Kanchipuram Silk" />
+                    </div>
+                    <h4 class="mt-3 font-headline-md">Amber Kanchipuram Silk</h4>
+                    <p class="text-sm text-secondary">₹24,500</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-md">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=640&h=800&fit=crop"
+                            alt="Designer Saree Jacket" />
+                    </div>
+                    <h4 class="mt-3 font-headline-md">Emerald Saree Jacket</h4>
+                    <p class="text-sm text-secondary">₹18,900</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-md">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=640&h=800&fit=crop"
+                            alt="Ivory Organza Delight" />
+                    </div>
+                    <h4 class="mt-3 font-headline-md">Ivory Organza Delight</h4>
+                    <p class="text-sm text-secondary">₹12,800</p>
+                </div>
+                <div class="group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-lg shadow-md">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            src="https://images.pexels.com/photos/3622608/pexels-photo-3622608.jpeg?w=640&h=800&fit=crop&auto=compress"
+                            alt="Zari Designer Saree Jacket" />
+                    </div>
+                    <h4 class="mt-3 font-headline-md">Zari Designer Blouse</h4>
+                    <p class="text-sm text-secondary">₹7,500</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 py-12 border-t border-stone-100">
+            <div class="text-center mb-8">
+                <span class="font-label-sm uppercase tracking-widest text-secondary">Kind Words</span>
+                <h2 class="font-headline-lg mt-4">Voices of Elegance</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-stone-900 p-6 rounded-lg shadow-sm text-center">
+                    <p class="italic text-stone-700 mb-4">"The attention to detail and the quality of the fabric
+                        exceeded my expectations."</p>
+                    <h5 class="font-label-sm uppercase">— Ananya Sharma</h5>
+                </div>
+                <div class="bg-white dark:bg-stone-900 p-6 rounded-lg shadow-sm text-center">
+                    <p class="italic text-stone-700 mb-4">"Every piece feels like a work of art. The boutique aesthetic
+                        is unmatched."</p>
+                    <h5 class="font-label-sm uppercase">— Meera Iyer</h5>
+                </div>
+                <div class="bg-white dark:bg-stone-900 p-6 rounded-lg shadow-sm text-center">
+                    <p class="italic text-stone-700 mb-4">"Traditional craftsmanship with modern design — my go-to for
+                        special occasions."</p>
+                    <h5 class="font-label-sm uppercase">— Priyanka Reddy</h5>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery (compact) -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-label-sm uppercase tracking-widest">Follow @SaiLakshmiBoutique</h3>
+                <a href="https://instagram.com/SaiLakshmiBoutique" target="_blank" rel="noopener"
+                    class="font-label-sm uppercase border-b pb-1">Instagram</a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=320&h=320&fit=crop"
+                    alt="insta1" />
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=320&h=320&fit=crop"
+                    alt="insta2" />
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=320&h=320&fit=crop"
+                    alt="insta3" />
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?w=320&h=320&fit=crop&auto=compress"
+                    alt="insta4" />
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=320&h=320&fit=crop"
+                    alt="insta5" />
+                <img class="w-full h-32 object-cover rounded"
+                    src="https://images.pexels.com/photos/3622608/pexels-photo-3622608.jpeg?w=320&h=320&fit=crop&auto=compress"
+                    alt="insta6" />
+            </div>
+        </section>
+
+    </main>
+    <footer class="w-full border-t border-stone-200/50 bg-[#F5F5DC] dark:bg-stone-900/95">
+        <div class="flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto px-4 md:px-12 py-10 gap-8">
+            <div>
+                <a class="font-serif italic text-2xl tracking-tighter text-stone-900 dark:text-amber-200 mb-4 block" href="index.html">Sai Lakshmi Boutique</a>
+                <p class="font-serif text-sm opacity-70 max-w-xs mb-4">A legacy of luxury and timeless elegance in ethnic fashion.</p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a class="text-stone-700 hover:text-amber-600 flex items-center gap-2 text-sm" href="mailto:info@sailakshmiboutique.com">
+                        <span class="material-symbols-outlined text-base">mail</span>
+                        info@sailakshmiboutique.com
+                    </a>
+                    <a class="text-stone-700 hover:text-amber-600 flex items-center gap-2 text-sm" href="https://wa.me/919876543210" target="_blank" rel="noopener">
+                        <span class="material-symbols-outlined text-base">chat</span>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-wrap gap-6 font-serif text-sm tracking-widest uppercase">
+                <a class="text-stone-600 hover:text-amber-600 transition-colors" href="collection.html">Collection</a>
+                <a class="text-stone-600 hover:text-amber-600 transition-colors" href="about.html">About</a>
+                <a class="text-stone-600 hover:text-amber-600 transition-colors" href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="text-stone-700 hover:text-amber-600" href="https://instagram.com/SaiLakshmiBoutique" target="_blank" rel="noopener">
+                    <span class="material-symbols-outlined">public</span>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a class="text-stone-700 hover:text-amber-600" href="https://facebook.com/SaiLakshmiBoutique" target="_blank" rel="noopener">
+                    <span class="material-symbols-outlined">share</span>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a class="text-stone-700 hover:text-amber-600" href="mailto:info@sailakshmiboutique.com">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="sr-only">Email</span>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 md:px-12 py-6 border-t border-stone-200/50 text-center">
+            <p class="font-serif text-xs tracking-widest uppercase opacity-60">© 2026 Sai Lakshmi Boutique. All Rights Reserved.</p>
+        </div>
+    </footer>
